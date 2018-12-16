@@ -118,3 +118,17 @@ CREATE TABLE IF NOT EXISTS history.HIST_SVL_S3QUERY
 ALTER TABLE history.hist_svl_s3query ADD COLUMN is_nested TEXT DEFAULT NULL;
 
 CREATE TABLE IF NOT EXISTS history.hist_stl_query_metrics (like stl_query_metrics);
+
+CREATE TABLE IF NOT EXISTS history.hist_stl_connection_log (like stl_connection_log);
+
+CREATE TABLE IF NOT EXISTS history.hist_svl_compile (
+  "userid" INTEGER ENCODE lzo, 
+  "xid" BIGINT ENCODE lzo, 
+  "pid" INTEGER ENCODE lzo, 
+  "query" INTEGER ENCODE lzo, 
+  "segment" INTEGER ENCODE lzo,
+  "locus" INTEGER ENCODE lzo,
+  "starttime" timestamp ENCODE lzo, 
+  "endtime" timestamp ENCODE lzo,
+  "compile" INTEGER ENCODE lzo
+);

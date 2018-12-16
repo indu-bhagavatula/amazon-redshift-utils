@@ -161,7 +161,7 @@ def snapshot(config_sources):
     aws_region = get_config_value(['AWS_REGION'], config_sources)
 
     set_debug = get_config_value(['DEBUG', 'debug', ], config_sources)
-    if set_debug is not None and (set_debug or set_debug.upper() == 'TRUE'):
+    if set_debug is not None and (set_debug or (isinstance(set_debug,str) and  set_debug.upper() == 'TRUE') ):
         global debug
         debug = True
 

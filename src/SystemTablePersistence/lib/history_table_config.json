@@ -38,6 +38,16 @@
     "table": "hist_stl_query_metrics",
     "snapshotNew": "select * from stl_query_metrics  where starttime > (select nvl(max(starttime), '01/01/1970'::TIMESTAMP) from history.hist_stl_query_metrics)",
     "archiveColumn": "starttime"
+  },
+  {
+    "table": "hist_stl_connection_log",
+    "snapshotNew": "select * from stl_connection_log  where recordtime > (select nvl(max(recordtime), '01/01/1970'::TIMESTAMP) from history.hist_stl_connection_log)",
+    "archiveColumn": "recordtime"
+  },
+  {
+    "table": "hist_svl_compile",
+    "snapshotNew": "select * from svl_compile  where starttime > (select nvl(max(starttime), '01/01/1970'::TIMESTAMP) from history.hist_svl_compile)",
+    "archiveColumn": "starttime"
   }
 ]
         

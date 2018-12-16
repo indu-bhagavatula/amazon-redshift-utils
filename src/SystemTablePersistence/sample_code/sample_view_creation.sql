@@ -42,3 +42,13 @@ SELECT h.* FROM svl_query_summary qs
 RIGHT OUTER JOIN history.hist_svl_query_summary h ON (qs.query = h.query AND qs.userid = h.userid AND qs.stm = h.stm AND qs.seg = h.seg AND qs.step = h.step AND qs.maxtime = h.maxtime AND qs.label = h.label)
 WHERE qs.query IS NULL
 );
+
+
+CREATE OR REPLACE VIEW history.all_stl_connection_log AS
+(
+SELECT conn.* FROM stl_connection_log conn
+UNION ALL
+SELECT h.* FROM stl_connection_log conn
+RIGHT OUTER JOIN history.hist_stl_connection_log h ON (conn.pid = h.pid AND conn.username = h.username AND conn.recordtime = h.recordtime )
+WHERE conn.query IS NULL
+);
