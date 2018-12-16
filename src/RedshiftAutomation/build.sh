@@ -50,7 +50,8 @@ cp -R ../WorkloadManagementScheduler/lib lib/WorkloadManagementScheduler
 echo "Imported Workload Management"
 
 if [ ! -d lib/amazon-redshift-monitoring ]; then
-    cd lib && git clone https://github.com/awslabs/amazon-redshift-monitoring
+    cd lib && git clone https://github.com/indu-bhagavatula/amazon-redshift-monitoring
+    # cd lib && git clone https://github.com/indu-bhagavatula/amazon-redshift-utils/tree/history-connection-summary/src/SystemTablePersistence
 else
     cd lib/amazon-redshift-monitoring && git pull
 fi
