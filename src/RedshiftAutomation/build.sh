@@ -51,7 +51,7 @@ echo "Imported Workload Management"
 
 if [ ! -d lib/amazon-redshift-monitoring ]; then
     # cd lib && git clone https://github.com/indu-bhagavatula/amazon-redshift-monitoring
-    cd lib && git clone https://github.com/indu-bhagavatula/amazon-redshift-utils/tree/history-connection-summary
+    cd lib && git clone https://github.com/indu-bhagavatula/amazon-redshift-utils -b history-connection-summary
 else
     cd lib/amazon-redshift-monitoring && git pull
 fi
